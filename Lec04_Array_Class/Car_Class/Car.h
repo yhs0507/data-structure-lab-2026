@@ -1,6 +1,6 @@
 #pragma once
 #define _CRT_SECURE_NO_WARNINGS
-#include <cstdio>
+#include <iostream>
 #include <cstring>
 
 class Car {
@@ -11,17 +11,17 @@ protected:
 public:
     int gear;
 
-    Car() {
-        speed = 0;
-        gear = 0;
-        strcpy(name, "NoName");
+    // 기본 생성자
+    Car() : speed(0), gear(1) {
+        strcpy(name, "Car");
     }
 
-    Car(int s, char* n, int g) {
-        speed = s;
-        gear = g;
+    // 매개변수가 있는 생성자
+    Car(int s, const char* n, int g) : speed(s), gear(g) {
         strcpy(name, n);
     }
+
+    ~Car() {}
 
     void changeGear(int g = 4) {
         gear = g;
@@ -32,22 +32,10 @@ public:
     }
 
     void display() {
-        printf("[%s] : 기어=%d단 속도=%dkmph\n", name, gear, speed);
-    }
-};
-
-class SportsCar : public Car {
-public:
-    bool bTurbo;
-
-    void setTurbo(bool bTur) {
-        bTurbo = bTur;
+        printf("[%s] : 기어=%d, 속도=%dkmph\n", name, gear, speed);
     }
 
-    void speedUp() {
-        if (bTurbo)
-            speed += 20;
-        else
-            Car::speedUp();
+    void whereAmI() {
+        printf("주소 = %p\n", (void*)this);
     }
 };
