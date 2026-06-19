@@ -1,0 +1,2 @@
+﻿Lec04_Array_Class.obj : error LNK2005: main이(가) Complex_Class.obj에 이미 정의되어 있습니다.
+C:\Users\puspu\OneDrive\바탕 화면\data\Lec04_Array_Class\x64\Debug\Lec04_Array_Class.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
